@@ -1,0 +1,19 @@
+sbt-growltest: Growl autotesting for Scala with Specs
+
+I'm using Scala with simple-build-tool and Specs. In Ruby, there is a tool
+called ZenTest autotest which does what sbt ~ test does (i.e. runs a test loop
+every time you save a file). It has one main advantage which is that it can use
+Growl (the OS X notification library) to tell you whether your tests have
+passed or failed. This is the only way I find that I can do TDD - having to
+alt-tab all day and inspect the output isn't fun. And IDEs are just... no way.
+Vim or TextMate please.
+
+sbt-growltest is a Ruby script which invokes `sbt "~ test"` and monitors the
+output. It offers three types of Growl notification - either "Tests pass",
+"Compilation failed; tests didn't run" or "Tests fail".
+
+I've included the Java mascot 'Duke' with a red nose for when tests/compile
+fail and with a photoshopped green nose for when tests pass!
+
+- you need to make sure you have Ruby (1.8 or 1.9 - shouldn't matter)
+- you may need to modify the script to point to images wherever you put them

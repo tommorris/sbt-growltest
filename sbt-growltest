@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+IO.popen("sbt \"~ test\"") do |io|
+  while(line = io.gets)
+    if line.strip.match /All tests PASSED/
+      puts line
+      `growlnotify --image "images/logo-java-300x300-green_nose.png" --name "sbt" -t "sbt test" -m "Tests pass"`
+	elsif line.strip.match /Error running test-compile: Compilation unsuccessful/
+	  puts line
+	  `growlnotify --image "images/logo-java-300x300-green_nose.png" --name "sbt" -t "sbt test" -m "Compilation failed; tests didn't run."`
+    elsif line.strip.match /Error running test\:/
+      puts line
+      `growlnotify --image "images/logo-java-300x300.png" --name "sbt" -t "sbt test" -m "Tests fail"`
+    else
+      puts line
+    end
+  end
+end
