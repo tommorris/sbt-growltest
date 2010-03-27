@@ -17,3 +17,6 @@ fail and with a photoshopped green nose for when tests pass!
 
 - you need to make sure you have Ruby (1.8 or 1.9 - shouldn't matter)
 - you may need to modify the script to point to images wherever you put them
+
+If you use Linux, do check out sbt-notifytest which does the same thing but
+with GNOME libnotify: http://github.com/tommorris/sbt-notifytest
