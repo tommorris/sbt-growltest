@@ -1,5 +1,16 @@
 sbt-growltest: Growl autotesting for Scala with Specs
 
+,____________
+| IMPORTANT! \
+|-----------------------------------------------.
+|                                               |
+| This project has been superseded by a proper  |
+| sbt plugin! Go check it out at:               |
+|                                               |
+| http://github.com/softprops/sbt-growl-plugin/ |
+|                                               |
++-----------------------------------------------+
+
 I'm using Scala with simple-build-tool and Specs. In Ruby, there is a tool
 called ZenTest autotest which does what sbt ~ test does (i.e. runs a test loop
 every time you save a file). It has one main advantage which is that it can use
